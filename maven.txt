@@ -69,3 +69,7 @@ mkdir -p src/main/java/com/sammas
 for package
 #mvn package
 
+remove previous build results
+#mvn clean
+
+
