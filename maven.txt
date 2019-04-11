@@ -31,3 +31,21 @@ maven build lifecycle
 	verify
 	install
 	deploy
+
+
+
+
+
+
+
+--------------
+maven looks at spesific directory templates
+for java files -> projcet root-> src->main->java + resources
+for test files -> projcet root-> src->test->java + resources
+
+*standart directory setup
+-p stands for parent directory
+mkdir -p src/main/java
+mkdir -p src/main/resources
+mkdir -p src/test/resources
+mkdir -p src/test/java
