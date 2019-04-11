@@ -56,3 +56,13 @@ touch src/main/java/.gitkeep
 touch src/main/resources/.gitkeep
 touch src/test/resources/.gitkeep
 touch src/test/java/.gitkeep
+
+
+
+so the you must create forlders for java files according to package 
+for example 
+package com.sammas;
+you must create 
+mkdir -p src/main/java/com/sammas
+
+
