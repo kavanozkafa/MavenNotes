@@ -73,3 +73,65 @@ remove previous build results
 #mvn clean
 
 
+for both of them
+#mvn clean package
+
+
+
+-------------------------------------------
+Plugins
+
+Plugins add more functionality and features.
+Maven = Plugin Engine (something like that)
+
+some plugins
+*Compile soruce code
+*Run Unit Tests
+*Publish to Artifact Repository
+*Deploy to Remote Server
+*Publish Documentation
+
+
+
+List of all plugins : https://maven.apache.org/plugins/index.html
+		
+clean 		Clean up after the build. 	
+compiler 	Compiles Java sources. 
+deploy 	 	Deploy the built artifact to the remote repository. 	
+failsafe 	Run the JUnit integration tests in an isolated classloader. 	
+install 	Install the built artifact into the local repository. 	
+resources 	Copy the resources to the output directory for including in the JAR. 	
+site 	 	Generate a site for the current project. 	
+surefire 	Run the JUnit unit tests in an isolated classloader. 	
+verifier 	Useful for integration tests - verifies the existence of certain conditions. 	
+
+
+
+for to add plugin to the project:
+select the plugin you wanna add
+copy the xml schema from apache plugins page between <build> tags and paste it in the pom.xml file
+
+<build>
+    [...]
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+    [...]
+  </build>
+
+
+
+
+
+
+---------------------------------------------
+
+
