@@ -66,3 +66,6 @@ you must create
 mkdir -p src/main/java/com/sammas
 
 
+for package
+#mvn package
+
