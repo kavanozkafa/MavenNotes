@@ -1,0 +1,33 @@
+
+install on Debian-Linux Dist.
+#apt install maven
+#mvn --version
+#export PATH=/opt/apache-maven-3.6.0/bin:$PATH
+
+
+
+What is Maven ?
+	Build Tool
+
+Features
+	Repository System
+	Dependency Management
+	Plugins
+	Configuration
+
+
+All of these inside in the POM.xml file
+Project Object Model
+
+
+
+
+maven build lifecycle
+	validate
+	compile
+	test
+	package
+	integration-test
+	verify
+	install
+	deploy
