@@ -9,6 +9,11 @@ install on Debian-Linux Dist.
 What is Maven ?
 	Build Tool
 
+Maven is:
+*A standard way to build the projects
+*A clear definition of what the project consisted of
+*An easy way to publish project information and a way to share JARs across several projects.
+
 Features
 	Repository System
 	Dependency Management
@@ -16,8 +21,24 @@ Features
 	Configuration
 
 
+
+maven's objectives
+-making the build process easy
+-providing a uniform build system
+-providing quality project information
+-providing guidelines for best practices development
+-allowing transparent migration to new features
+
+
 All of these inside in the POM.xml file
-Project Object Model
+Project Object Mode
+*Describes a project
+*Plugins
+*Profiles
+*Name,Version,Dependencies,Soruce Code Locations,Artifact type
+*Uses XML by Default
+
+
 
 
 
@@ -32,6 +53,18 @@ maven build lifecycle
 	install
 	deploy
 
+
+----------------------
+Project Identifiers
+
+Maven uses a set of identifiers, also called coordinates, to uniquely identify a project and specify how the project artifact should be packaged:
+
+    groupId – a unique base name of the company or group that created the project
+    artifactId – a unique name of the project
+    version – a version of the project
+    packaging – a packaging method (e.g. WAR/JAR/ZIP)
+
+The first three of these (groupId:artifactId:version) combine to form the unique identifier and are the mechanism by which you specify which versions of external libraries (e.g. JARs) your project will use.
 
 
 
@@ -134,4 +167,80 @@ copy the xml schema from apache plugins page between <build> tags and paste it i
 
 ---------------------------------------------
 
+dependencies
+
+if you wanna add dependency in pom.xml file :
+search library in the https://search.maven.org/ or mvnrepository.com
+compy the tags and paste in the pom.xml file
+
+
+<dependencies>
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+</dependencies>
+
+
+for see all the dependencies of your project
+#mvn dependency:tree
+
+
+This is a key feature of Maven and provides the following benefits:
+
+*uses less storage by significantly reducing the number of downloads off remote repositories makes checking out a project quicker
+*provides an effective platform for exchanging binary artifacts within your organization and beyond without the need for building artifact from source every time
+
+
+
+
+
+
+
+------------------------
+for unit testing
+#mvn test
+
+-------------------------
+Archetypes
+https://maven.apache.org/archetype/index.html
+
+Archetype is a Maven project templating toolkit.
+#mvn archetype:generate
+#maven-archetype --> for listing archetype /default is 44
+
+---------------
+
+ Build the Project
+
+    mvn package
+
+    You may test the newly compiled and packaged JAR with the following command:
+
+    java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
+
+Which will print the quintessential:
+
+    Hello World!
+
+--------------
+
+There are two other Maven lifecycles of note beyond the default list above. They are
+
+    clean: cleans up artifacts created by prior builds
+
+    site: generates site documentation for this project
+
+Phases are actually mapped to underlying goals. The specific goals executed per phase is dependant upon the packaging type of the project. For example, package executes jar:jar if the project type is a JAR, and war:war if the project type is - you guessed it - a WAR.
+
+An interesting thing to note is that phases and goals may be executed in sequence.
+
+    mvn clean dependency:copy-dependencies package
+
+This command will clean the project, copy dependencies, and package the project (executing all phases up to package, of course).
+Generating the Site
+
+    mvn site
 
