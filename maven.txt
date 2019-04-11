@@ -49,3 +49,10 @@ mkdir -p src/main/java
 mkdir -p src/main/resources
 mkdir -p src/test/resources
 mkdir -p src/test/java
+
+
+for adding directories to git you should add some empty files to the folders:
+touch src/main/java/.gitkeep
+touch src/main/resources/.gitkeep
+touch src/test/resources/.gitkeep
+touch src/test/java/.gitkeep
